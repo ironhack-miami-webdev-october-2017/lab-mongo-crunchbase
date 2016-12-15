@@ -41,7 +41,7 @@ $ npm install --save clear
 
 Create a new file called `main.js`
 
-```javascript=
+```javascript
 const MongoDB = require('mongodb');
 const mongoClient = MongoDB.MongoClient;
 const clear = require('clear');
@@ -76,7 +76,7 @@ Until now we have created the connection with MongoDB Database.
 Let's create the mainMenu, copy the following function after `mongoClient.connect();`
 
 
-```javascript=22
+```javascript
 function printMenu(){
 	console.log(`
 0.- Exit
@@ -105,7 +105,8 @@ This are all the queries that you have to do.
 
 Now let's create the main function
 
-```javascript=18
+```javascript
+...
 mongoClient.connect(url, (error, db) => {
   if (error) {
     console.log('Error trying to connect to the Database');
@@ -164,10 +165,10 @@ Type an option and if you see the console message, it's a good signal.
 Inside `case "1":`
 
 
-💣 Delete lines 31 and 32 💣
+💣 **Delete lines inside the case `console.log('you typed 1');` and `rl.question('\nType enter to continue: ', (answer) => {mainMenu()});`** 💣
 
 
-```javascript=31
+```javascript
 db.collection('companies').find({}, {name: 1, _id: 0}).toArray((error, result) => {
   if (error) {
     console.log(error);
@@ -191,14 +192,14 @@ If you feel motivated you can do 3 more extra queries.
  
 - How many companies mention Google in their overview.
 
-💣 In order to perform this query you have to create an index execute the following `db.companies.createIndex({overview: "text"})` in MongoShell 💣
+💣 **In order to perform this query you have to create an index execute the following `db.companies.createIndex({overview: "text"})` in MongoShell** 💣
 
 
-💡 For the query check [text search operator](https://docs.mongodb.com/v3.2/reference/operator/query/text/) 💡
+💡 **For the query check [text search operator](https://docs.mongodb.com/v3.2/reference/operator/query/text/)** 💡
 
 - Find companies founded in 2004 and having 5 or more rounds of funding, calculate the average amount raised.
 
-💡 Use Framework aggregation 💡
+💡 **Use Framework aggregation** 💡
 
 ## Summary
 
