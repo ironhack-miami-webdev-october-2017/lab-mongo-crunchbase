@@ -1,4 +1,6 @@
-# Daily Exercise | Crunchbase Database
+![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
+
+# DE | Crunchbase Database
 
 ![](https://i.imgur.com/FqGd9jz.jpg)
 
@@ -18,7 +20,7 @@ Use mongoimport to import into `companies` collection in `crunchbase` database
 💡 Check mongoimport documentation if you don't remember how to do it. 💡
 
 
-First of all perform in MongoShell the following query in order to know how the documents are structured. 
+First of all perform in MongoShell the following query in order to know how the documents are structured.
 
 ```javascript
 db.companies.find({name: "Facebook"}).pretty()
@@ -59,7 +61,7 @@ mongoClient.connect(url, (error, db) => {
     console.log(error);
   } else {
     console.log('Connection established correctly!! 😬');
-    
+
   }
 });
 
@@ -92,7 +94,7 @@ function printMenu(){
 10.- List the name of all the products of Facebook
 11.- List the people that are working at Facebook right now (check relationships field)
 12.- How many people are not working anymore at Facebook
-13.- List all the companies where "david-ebersman" has worked. 
+13.- List all the companies where "david-ebersman" has worked.
 14.- List by name the competitors of Facebook
 15.- Names of the companies that has "social-networking" in tag-list (be aware that the value of field is a string check regex operators)
 16.- How many companies that has "social-network" in tag-list and founded between 2002 and 2016 inclusive
@@ -113,7 +115,7 @@ mongoClient.connect(url, (error, db) => {
     console.log(error);
   } else {
     console.log('Connection established correctly!! 😬');
-    
+
     function mainMenu(){
       clear();
       printMenu();
@@ -137,9 +139,9 @@ mongoClient.connect(url, (error, db) => {
         }
       });
 	}
-    
+
     mainMenu();
-    
+
   }
 });
 
@@ -191,7 +193,7 @@ Perfom the 17 queries, following the instructions how we did before
 If you feel motivated you can do 3 more extra queries.
 
 - Find all the distinct categories, so list all unique categories [ use distinct method](https://docs.mongodb.com/manual/reference/method/db.collection.distinct/)
- 
+
 - How many companies mention Google in their overview.
 
 💣 **In order to perform this query you have to create an index execute the following `db.companies.createIndex({overview: "text"})` in MongoShell** 💣
@@ -212,5 +214,3 @@ In this exercise you practice with MongoDB Driver to perform different queries.
 [MongoDB NodeJS Driver Documentatio](http://mongodb.github.io/node-mongodb-native/2.2/quick-start/)
 
 [MongoShell Documentation](https://docs.mongodb.com/manual/)
-
-
